@@ -1,0 +1,53 @@
+<form (ngSubmit)="agregarHistoriaClinica()">
+  <div>
+    <label for="mascotaId">Seleccionar Mascota:</label>
+    <select id="mascotaId" [(ngModel)]="idMascota" name="mascota" (change)="actualizarMascotaSeleccionada()">
+      <option *ngFor="let mascota of mascotas" [value]="mascota.id">
+        {{ mascota.nombre }} - {{ mascota.usuario?.documentoIdentificacion }}
+      </option>
+    </select>
+  </div>
+
+  <div>
+    <label for="usuarioId">ID del usuario:</label>
+    <input type="text" id="usuarioId" [value]="mascotaSeleccionada?.usuario?.id || ''" disabled>
+  </div>
+
+  <div>
+    <label for="nombreUsuario">Nombre del usuario:</label>
+    <input type="text" id="nombreUsuario" [value]="mascotaSeleccionada?.usuario?.nombre || ''" disabled>
+  </div>
+
+  <div>
+    <label for="apellidoUsuario">Apellido del usuario:</label>
+    <input type="text" id="apellidoUsuario" [value]="mascotaSeleccionada?.usuario?.apellido || ''" disabled>
+  </div>
+
+  <div>
+    <label for="tipoDocumentoUsuario">Tipo de documento del usuario:</label>
+    <input type="text" id="tipoDocumentoUsuario" [value]="mascotaSeleccionada?.usuario?.tipoDocumento || ''" disabled>
+  </div>
+
+  <div>
+    <label for="documentoUsuario">Documento de identificación del usuario:</label>
+    <input type="text" id="documentoUsuario" [value]="mascotaSeleccionada?.usuario?.documentoIdentificacion || ''" disabled>
+  </div>
+
+  <div>
+    <label for="estadoUsuario">Estado del usuario:</label>
+    <input type="text" id="estadoUsuario" [value]="mascotaSeleccionada?.usuario?.estado || ''" disabled>
+  </div>
+
+  <div>
+    <label for="sexoUsuario">Sexo del usuario:</label>
+    <input type="text" id="sexoUsuario" [value]="mascotaSeleccionada?.usuario?.sexo || ''" disabled>
+  </div>
+
+  <div>
+    <label for="sexoMascota">Sexo de la mascota:</label>
+    <input type="text" id="sexoMascota" [value]="mascotaSeleccionada?.sexo || ''" disabled>
+  </div>
+
+
+  <button type="submit">Agregar Historia Clínica</button>
+</form>

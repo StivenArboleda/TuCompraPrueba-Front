@@ -1,0 +1,49 @@
+<!-- app.component.html -->
+
+<h1>Historias Clínicas</h1>
+
+<div>
+  <label for="historiaId">ID de Historia Clínica:</label>
+  <input type="text" id="historiaId" placeholder="Ingrese el ID" [(ngModel)]="idHistoria">
+  <button (click)="buscarHistoriaPorId()">Buscar</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID Historia Clínica</th>
+      <th>Nombre Usuario</th>
+      <th>Apellido Usuario</th>
+      <th>Tipo de Documento</th>
+      <th>Documento de Identificación</th>
+      <th>Estado Usuario</th>
+      <th>Sexo Usuario</th>
+      <th>Nombre Mascota</th>
+      <th>Raza Mascota</th>
+      <th>Sexo Mascota</th>
+      <th>Fecha de Creación</th>
+      <th>Acciones</th> <!-- Nueva columna para acciones -->
+    </tr>
+  </thead>
+  <tbody>
+    <!-- Utiliza *ngFor para iterar sobre las historias clínicas -->
+    <tr *ngFor="let historia of historiasClinicas">
+      <td>{{ historia.id }}</td>
+      <td>{{ historia.mascota.usuario.nombre }}</td>
+      <td>{{ historia.mascota.usuario.apellido }}</td>
+      <td>{{ historia.mascota.usuario.tipoDocumento }}</td>
+      <td>{{ historia.mascota.usuario.documentoIdentificacion }}</td>
+      <td>{{ historia.mascota.usuario.estado }}</td>
+      <td>{{ historia.mascota.usuario.sexo }}</td>
+      <td>{{ historia.mascota.nombre }}</td>
+      <td>{{ historia.mascota.raza }}</td>
+      <td>{{ historia.mascota.sexo }}</td>
+      <td>{{ historia.fechaCreacion | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+      <td>
+        <!-- Agrega botones de editar y eliminar con funciones correspondientes -->
+        <button (click)="editarHistoria(historia)">Editar</button>
+        <button (click)="eliminarHistoria(historia.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
