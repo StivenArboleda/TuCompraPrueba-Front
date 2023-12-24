@@ -63,16 +63,13 @@ export class AgregarHistoriaComponent implements OnInit {
     );
   }
 
-  // Agrega este método para actualizar la mascota seleccionada
   actualizarMascotaSeleccionada() {
     console.log('Mascotas:', this.mascotas);
 
-    // Llama al servicio para obtener la mascota por su id
     this.mascotaService.getMascotaById(this.idMascota).subscribe(
       mascota => {
         this.mascotaSeleccionada = mascota;
 
-        // Verifica si se encontró la mascota antes de acceder a sus propiedades
         if (this.mascotaSeleccionada) {
           console.log('Mascota seleccionada:', this.mascotaSeleccionada);
         } else {

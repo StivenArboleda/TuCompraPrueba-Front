@@ -1,0 +1,59 @@
+<h2>Detalles de Historia Clínica</h2>
+
+<div>
+  <label for="historiaId">ID de Historia Clínica:</label>
+  <input type="text" id="historiaId" placeholder="Ingrese el ID" [(ngModel)]="idDetalleHistoria">
+  <button (click)="buscarDetalleHistoriaPorId()">Buscar</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID Detalle Historia Clínica</th>
+      <th>Temperatura</th>
+      <th>Peso</th>
+      <th>Frecuencia Cardíaca</th>
+      <th>Frecuencia Respiratoria</th>
+      <th>Fecha y Hora</th>
+      <th>Alimentación</th>
+      <th>Hábitat</th>
+      <th>Observación</th>
+      <th>Nombre Colaborador</th>
+      <th>Apellido Colaborador</th>
+      <th>Cargo Colaborador</th>
+      <th>Especialidad Colaborador</th>
+      <th>Tipo Documento Colaborador</th>
+      <th>Documento Identificación Colaborador</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr *ngFor="let detalle of historiaClinicaDetalles">
+      <td>{{ detalle.id }}</td>
+      <td>{{ detalle.temperatura }}</td>
+      <td>{{ detalle.peso }}</td>
+      <td>{{ detalle.frecuenciaCardiaca }}</td>
+      <td>{{ detalle.frecuenciaRespiratoria }}</td>
+      <td>{{ detalle.fechaHora | date:'dd/MM/yyyy HH:mm:ss' }}</td>
+      <td>{{ detalle.alimentacion }}</td>
+      <td>{{ detalle.habitat }}</td>
+      <td>{{ detalle.observacion }}</td>
+      <td>{{ detalle.colaborador.nombre }}</td>
+      <td>{{ detalle.colaborador.apellido }}</td>
+      <td>{{ detalle.colaborador.cargo }}</td>
+      <td>{{ detalle.colaborador.especialidad }}</td>
+      <td>{{ detalle.colaborador.tipoDocumento }}</td>
+      <td>{{ detalle.colaborador.documentoIdentificacion }}</td>
+      
+      <td class="action-buttons">
+        <button (click)="editarDetalle(detalle)" class="action-button">
+          <i class="pi pi-pencil"></i>
+        </button>
+        <button (click)="eliminarDetalleHistoria(detalle.id)" class="action-button">
+          <i class="pi pi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>

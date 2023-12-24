@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HistoriaClinicaService } from '../../../services/HistoriaClinica.service'; // Asegúrate de ajustar la ruta correcta
 import { HistoriaClinicaInterface } from '../historiaClinica';
 
@@ -13,7 +14,7 @@ export class HistoriaClinicaComponent implements OnInit {
   historiaSeleccionada: HistoriaClinicaInterface | null = null;
   idHistoria: number = 0;
 
-  constructor(private historiaClinicaService: HistoriaClinicaService) { }
+  constructor(private historiaClinicaService: HistoriaClinicaService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerHistoriasClinicas();
@@ -62,6 +63,8 @@ export class HistoriaClinicaComponent implements OnInit {
     );
   }
 
-
+  agregarDetalle(historiaId: number) {
+    this.router.navigate(['agregar-detalle-historia', historiaId]);
+  }
   
 }

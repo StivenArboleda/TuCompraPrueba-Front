@@ -1,53 +1,72 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  h1 {
-    color: #333;
-  }
-  
-  .container {
-    margin-bottom: 20px;
-  }
-  
-  .label-input {
-    display: block;
-    margin-bottom: 10px;
-  }
-  
-  .input-field {
-    padding: 8px;
-    width: 200px;
-  }
-  
-  .button {
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-  }
-  
-  .button:hover {
-    background-color: #0056b3;
-  }
-  
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-  }
-  
-  th, td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
-  }
-  
-  th {
-    background-color: #f2f2f2;
-  }
-  
+/* historias-clinicas.component.css */
+
+/* Estilo para la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  grid-column: span 3;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Estilo para el formulario de búsqueda */
+div {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 8px;
+  margin-right: 8px;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+}
+
+button.action-button {
+  padding: 6px 10px;
+  margin-right: 4px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  display: flex;
+  align-items: center; /* Alinear ícono y texto verticalmente */
+}
+
+/* Estilo para los íconos dentro de los botones */
+button.action-button i {
+  margin-right: 4px;
+}
+.action-buttons {
+  display: flex;
+}
+
+.action-button {
+  margin-right: 5px; /* Puedes ajustar este margen según tus preferencias */
+}
+
+.action-button i {
+  margin-right: 5px; /* Espacio entre el icono y el texto del botón */
+}
+
