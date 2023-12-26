@@ -1,4 +1,19 @@
-# ClinicaVeterinaria
+# ClinicaVeterinaria FrontEnd
+
+Este repositorio se encarga de almacenar toda la información de la [prueba técnica](https://github.com/StivenArboleda/TuCompraPrueba/blob/main/Prueba%20de%20Programacio%CC%81n%20Tu%20Compra%20SAS.pdf "prueba técnica") puesta por TuCompra por el lado del frontEnd.
+
+##### Para su solución se implementó:
+- Framework Angular11.
+- Validación de los formularios.
+- Manejo de expcepciones.
+- PrimeNG
+- Implementación de servicio REST.
+
+Por otra lado, todo lo relacionado con el backend se encontrará en este [repositorio](https://github.com/StivenArboleda/TuCompraPrueba "repositorio").
+
+El resto de información necesaria se encontrará a partir de aquí.
+
+------------
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.19.
 
