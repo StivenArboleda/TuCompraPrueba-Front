@@ -37,7 +37,7 @@
       <td>{{ detalle.frecuenciaRespiratoria }}</td>
       <td>{{ detalle.fechaHora | date:'dd/MM/yyyy HH:mm:ss' }}</td>
       <td>{{ detalle.alimentacion }}</td>
-      <td>{{ detalle.habitat }}</td>
+      <td>{{ detalle.habitad }}</td>
       <td>{{ detalle.observacion }}</td>
       <td>{{ detalle.colaborador.nombre }}</td>
       <td>{{ detalle.colaborador.apellido }}</td>
@@ -52,6 +52,9 @@
         </button>
         <button (click)="eliminarDetalleHistoria(detalle.id)" class="action-button">
           <i class="pi pi-trash"></i>
+        </button>
+        <button (click)="buscarDetalleHistoriaIndividual(detalle.id)" class="action-button">
+          <i class="pi pi-search"></i>
         </button>
       </td>
     </tr>

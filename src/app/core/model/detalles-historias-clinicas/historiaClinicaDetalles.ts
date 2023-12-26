@@ -1,5 +1,5 @@
 export interface HistoriaClinicaDetallesInterface {
-    id: number;
+    id?: number;
     temperatura: number;
     peso: number;
     frecuenciaCardiaca: number;
@@ -10,16 +10,16 @@ export interface HistoriaClinicaDetallesInterface {
     observacion: string;
     colaborador: {
       id: number;
-      nombre: string;
-      apellido: string;
-      cargo: string;
-      especialidad: string;
-      tipoDocumento: string;
-      documentoIdentificacion: string;
+      nombre?: string;
+      apellido?: string;
+      cargo?: string;
+      especialidad?: string;
+      tipoDocumento?: string;
+      documentoIdentificacion?: string;
     };
     historiaClinica: {
       id: number;
-      mascota: {
+      mascota?: {
         id: number;
         nombre: string;
         raza: string;
@@ -34,7 +34,7 @@ export interface HistoriaClinicaDetallesInterface {
         };
         sexo: string;
       };
-      fechaCreacion: string;
+      fechaCreacion?: string;
     };
   }
   

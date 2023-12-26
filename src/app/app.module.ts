@@ -14,6 +14,7 @@ import { AgregarDetalleHistoriaComponent } from './core/model/detalles-historias
 import { EditarDetalleHistoriaComponent } from './core/model/detalles-historias-clinicas/editar-detalle-historia/editar-detalle-historia.component';
 import { ColaboradorComponent } from './core/model/colaborador/colaborador/colaborador.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { VerDetallesComponent } from './core/model/detalles-historias-clinicas/ver-detalles/ver-detalles.component';
 
 
 
@@ -28,7 +29,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AgregarDetalleHistoriaComponent,
     EditarDetalleHistoriaComponent,
     ColaboradorComponent,
-    NavbarComponent
+    NavbarComponent,
+    VerDetallesComponent
   ],
   imports: [
     BrowserModule,

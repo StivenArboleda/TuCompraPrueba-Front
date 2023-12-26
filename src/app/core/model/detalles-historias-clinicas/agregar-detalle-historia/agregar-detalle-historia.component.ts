@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { DetalleHistoriaClinicaService } from '../../../services/DetalleHistoriaClinica.service'
 import { ColaboradorSerivce } from 'src/app/core/services/Colaborador.service';
@@ -129,7 +130,7 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
   
         if (this.colaboradorSeleccionado) {
           console.log('Colaborador seleccionado:', this.colaboradorSeleccionado);
-          // Asigna los datos del colaborador al objeto detalleHistoriaClinica
+
           this.detalleHistoriaClinica.colaborador = this.colaboradorSeleccionado;
         } else {
           console.log('Colaborador no encontrado');
@@ -141,9 +142,28 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
     );
   }
 
-  agregarDetalle() {
+  agregarDetalle(detalleForm: NgForm): void {
 
-    this.detalleHistoriaClinicaService.agregarDetalleHistoriaClinica(this.detalleHistoriaClinica).subscribe(
+    const detalleEnviar = {
+      temperatura: this.detalleHistoriaClinica.temperatura,
+      peso: this.detalleHistoriaClinica.peso,
+      frecuenciaCardiaca: this.detalleHistoriaClinica.frecuenciaCardiaca,
+      frecuenciaRespiratoria: this.detalleHistoriaClinica.frecuenciaRespiratoria,
+      fechaHora: this.detalleHistoriaClinica.fechaHora,
+      alimentacion: this.detalleHistoriaClinica.alimentacion,
+      habitad: this.detalleHistoriaClinica.habitad,
+      observacion: this.detalleHistoriaClinica.observacion,
+      colaborador: {
+        id: this.detalleHistoriaClinica.colaborador.id
+      },
+      historiaClinica: {
+        id: this.idHistoria
+      }
+    };
+  
+    console.log('Objeto JSON que se enviará:', detalleEnviar);
+
+    this.detalleHistoriaClinicaService.agregarDetalleHistoriaClinica(detalleEnviar).subscribe(
       (resultado) => {
         console.log('Detalle de historia clínica agregado con éxito:', resultado);
       },
@@ -152,4 +172,6 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
       }
     );
   }
+  
+  
 }

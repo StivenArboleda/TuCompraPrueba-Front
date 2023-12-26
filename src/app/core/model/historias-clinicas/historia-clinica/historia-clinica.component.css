@@ -1,6 +1,3 @@
-/* historias-clinicas.component.css */
-
-/* Estilo para la tabla */
 table {
   width: 100%;
   border-collapse: collapse;
@@ -23,7 +20,6 @@ th {
   background-color: #f2f2f2;
 }
 
-/* Estilo para el formulario de búsqueda */
 div {
   margin-bottom: 20px;
 }
@@ -51,10 +47,9 @@ button.action-button {
   border: none;
   border-radius: 3px;
   display: flex;
-  align-items: center; /* Alinear ícono y texto verticalmente */
+  align-items: center;
 }
 
-/* Estilo para los íconos dentro de los botones */
 button.action-button i {
   margin-right: 4px;
 }
@@ -63,10 +58,10 @@ button.action-button i {
 }
 
 .action-button {
-  margin-right: 5px; /* Puedes ajustar este margen según tus preferencias */
+  margin-right: 5px;
 }
 
 .action-button i {
-  margin-right: 5px; /* Espacio entre el icono y el texto del botón */
+  margin-right: 5px;
 }
 

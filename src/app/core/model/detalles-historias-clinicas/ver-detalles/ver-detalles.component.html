@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Historia Clínica</title>
+    <style>
+      body {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+      }
+      section {
+        width: 45%;
+        margin: 10px;
+      }
+      table {
+        width: 100%;
+      }
+      th, td {
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+</head>
+<h1>Detalles de la Historia Clínica</h1>
+<body>
+
+  <section>
+    <h2>Detalles Generales</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <td>{{ historiaClinicaDetalles?.id }}</td>
+      </tr>
+      <tr>
+        <th>Temperatura</th>
+        <td>{{ historiaClinicaDetalles?.temperatura }}</td>
+      </tr>
+      <tr>
+        <th>Peso</th>
+        <td>{{ historiaClinicaDetalles?.peso }}</td>
+      </tr>
+      <tr>
+        <th>Frecuencia Cardíaca</th>
+        <td>{{ historiaClinicaDetalles?.frecuenciaCardiaca }}</td>
+      </tr>
+      <tr>
+        <th>Frecuencia Respiratoria</th>
+        <td>{{ historiaClinicaDetalles?.frecuenciaRespiratoria }}</td>
+      </tr>
+      <tr>
+        <th>Fecha y Hora</th>
+        <td>{{ historiaClinicaDetalles?.fechaHora }}</td>
+      </tr>
+      <tr>
+        <th>Alimentación</th>
+        <td>{{ historiaClinicaDetalles?.alimentacion }}</td>
+      </tr>
+      <tr>
+        <th>Hábitat</th>
+        <td>{{ historiaClinicaDetalles?.habitad }}</td>
+      </tr>
+      <tr>
+        <th>Observación</th>
+        <td>{{ historiaClinicaDetalles?.observacion }}</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Información del Colaborador</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.id }}</td>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.nombre }}</td>
+      </tr>
+      <tr>
+        <th>Apellido</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.apellido }}</td>
+      </tr>
+      <tr>
+        <th>Cargo</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.cargo }}</td>
+      </tr>
+      <tr>
+        <th>Especialidad</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.especialidad }}</td>
+      </tr>
+      <tr>
+        <th>Tipo de Documento</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.tipoDocumento }}</td>
+      </tr>
+      <tr>
+        <th>Documento de Identificación</th>
+        <td>{{ historiaClinicaDetalles?.colaborador?.documentoIdentificacion }}</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Información de la Mascota</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.mascota?.id }}</td>
+      </tr>
+      <tr>
+        <th>Nombre</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.mascota?.nombre }}</td>
+      </tr>
+      <tr>
+        <th>Raza</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.mascota?.raza }}</td>
+      </tr>
+      <tr>
+        <th>Sexo de la Mascota</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.mascota?.sexo }}</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Información de la Historia Clínica</h2>
+    <table border="1">
+      <tr>
+        <th>ID</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.id }}</td>
+      </tr>
+      <tr>
+        <th>Fecha de Creación</th>
+        <td>{{ historiaClinicaDetalles?.historiaClinica?.fechaCreacion }}</td>
+      </tr>
+    </table>
+  </section>
+
+</body>
+</html>

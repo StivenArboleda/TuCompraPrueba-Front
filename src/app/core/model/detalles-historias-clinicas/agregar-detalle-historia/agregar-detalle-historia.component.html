@@ -1,6 +1,6 @@
 <h2>Agregar Detalle de Historia Clínica</h2>
 
-<form (submit)="agregarDetalle()">
+<form (submit)="agregarDetalle(detalleForm)" #detalleForm="ngForm">
   <!-- Historia Clínica -->
   <div>
     <label for="nombreMascota">Nombre de la Mascota:</label>

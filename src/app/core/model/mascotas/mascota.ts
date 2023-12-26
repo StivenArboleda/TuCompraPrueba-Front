@@ -2,6 +2,7 @@ export interface MascotaInterface {
     id: number;
     nombre: string;
     raza: string;
+    sexo: string;
     usuario: {
         id: number;
         nombre: string;
@@ -11,5 +12,4 @@ export interface MascotaInterface {
         estado: string;
         sexo: string;
     };
-    sexo: string;
 }

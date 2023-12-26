@@ -18,6 +18,7 @@ export class AgregarHistoriaComponent implements OnInit {
     id: number,
     nombre: string,
     raza: string,
+    sexo: string,
     usuario: {
       id: number,
       nombre: string,
@@ -27,7 +28,7 @@ export class AgregarHistoriaComponent implements OnInit {
       estado: string,
       sexo: string
     },
-    sexo: string
+
   };
 
   constructor(private mascotaService: MascotaService, private historiaClinicaService: HistoriaClinicaService) {

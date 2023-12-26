@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { HistoriaClinicaDetallesInterface } from '../historiaClinicaDetalles';
 import { DetalleHistoriaClinicaService } from '../../../services/DetalleHistoriaClinica.service'
 
@@ -14,7 +15,7 @@ export class HistoriaClinicaDetallesComponent implements OnInit {
 
 
 
-  constructor(private detalleHistoriaClinica: DetalleHistoriaClinicaService) { }
+  constructor(private detalleHistoriaClinica: DetalleHistoriaClinicaService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerDetallesHistoriasClinicas();
@@ -60,5 +61,9 @@ export class HistoriaClinicaDetallesComponent implements OnInit {
         console.error(`Error al eliminar detalle historia clínica con ID ${id}`, error);
       }
     );
+  }
+
+  buscarDetalleHistoriaIndividual(detalleHistoriaId: number) {
+    this.router.navigate(['/ver-detalle-historia', detalleHistoriaId]);
   }
 }
