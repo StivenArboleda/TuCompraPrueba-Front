@@ -66,4 +66,9 @@ export class HistoriaClinicaDetallesComponent implements OnInit {
   buscarDetalleHistoriaIndividual(detalleHistoriaId: number) {
     this.router.navigate(['/ver-detalle-historia', detalleHistoriaId]);
   }
+  
+  editarDetalle(id: number): void {
+    this.router.navigate(['/editar-detalle-historia', id]);
+  }
+  
 }

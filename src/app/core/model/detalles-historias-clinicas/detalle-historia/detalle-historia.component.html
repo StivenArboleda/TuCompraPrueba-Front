@@ -47,7 +47,7 @@
       <td>{{ detalle.colaborador.documentoIdentificacion }}</td>
       
       <td class="action-buttons">
-        <button (click)="editarDetalle(detalle)" class="action-button">
+        <button (click)="editarDetalle(detalle.id)" class="action-button">
           <i class="pi pi-pencil"></i>
         </button>
         <button (click)="eliminarDetalleHistoria(detalle.id)" class="action-button">

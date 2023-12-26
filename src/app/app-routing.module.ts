@@ -5,6 +5,7 @@ import { AgregarHistoriaComponent } from './core/model/historias-clinicas/agrega
 import { HistoriaClinicaDetallesComponent } from './core/model/detalles-historias-clinicas/detalle-historia/detalle-historia.component';
 import { AgregarDetalleHistoriaComponent } from './core/model/detalles-historias-clinicas/agregar-detalle-historia/agregar-detalle-historia.component';
 import { VerDetallesComponent } from './core/model/detalles-historias-clinicas/ver-detalles/ver-detalles.component';
+import { EditarDetalleHistoriaComponent } from './core/model/detalles-historias-clinicas/editar-detalle-historia/editar-detalle-historia.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'detalles-historias-clinicas', component: HistoriaClinicaDetallesComponent},
   { path: 'agregar-detalle-historia/:historiaId', component: AgregarDetalleHistoriaComponent},
   { path: 'ver-detalle-historia/:detalleHistoriaId', component: VerDetallesComponent},
+  { path: 'editar-detalle-historia/:id', component: EditarDetalleHistoriaComponent}
 ];
 
 @NgModule({

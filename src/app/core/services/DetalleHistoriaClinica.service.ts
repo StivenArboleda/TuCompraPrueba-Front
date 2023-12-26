@@ -34,6 +34,11 @@ export class DetalleHistoriaClinicaService {
     const url = `${this.API_DETALLE_HISTORIA_CLINICA}/detalle/${id}`;
     return this.http.get<HistoriaClinicaDetallesInterface>(url);
   }
+
+  public editarDetalleHistoriaClinica(id: number, historiaClinica: HistoriaClinicaDetallesInterface): Observable<HistoriaClinicaDetallesInterface> {
+    const url = `${this.API_DETALLE_HISTORIA_CLINICA}/${id}`;
+    return this.http.put<HistoriaClinicaDetallesInterface>(url, historiaClinica);
+  }
   
 
 }

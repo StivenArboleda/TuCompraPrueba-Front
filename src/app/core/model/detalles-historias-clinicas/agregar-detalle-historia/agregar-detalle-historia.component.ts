@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DetalleHistoriaClinicaService } from '../../../services/DetalleHistoriaClinica.service'
 import { ColaboradorSerivce } from 'src/app/core/services/Colaborador.service';
 import { HistoriaClinicaService } from '../../../services/HistoriaClinica.service'; // Asegúrate de ajustar la ruta correcta
@@ -62,7 +62,8 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
   constructor(private detalleHistoriaClinicaService: DetalleHistoriaClinicaService,
     private colaboradorService: ColaboradorSerivce,
     private historiaClinicaService: HistoriaClinicaService,
-    private activatedRoute: ActivatedRoute) { 
+    private activatedRoute: ActivatedRoute,
+    private router: Router) { 
       this.colaboradorSeleccionado = {
         id: 0,
         nombre: '',
@@ -166,6 +167,8 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
     this.detalleHistoriaClinicaService.agregarDetalleHistoriaClinica(detalleEnviar).subscribe(
       (resultado) => {
         console.log('Detalle de historia clínica agregado con éxito:', resultado);
+        window.alert('Cambios guardados correctamente');
+        this.router.navigate(['/detalles-historias-clinicas']);
       },
       (error) => {
         console.error('Error al agregar el detalle de historia clínica:', error);
