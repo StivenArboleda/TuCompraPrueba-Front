@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DetalleHistoriaClinicaService } from '../../../services/DetalleHistoriaClinica.service';
-import { ColaboradorSerivce } from '../../../services/Colaborador.service'; // Asegúrate de ajustar la ruta correcta
+import { ColaboradorSerivce } from '../../../services/Colaborador.service'; 
 import { HistoriaClinicaService } from '../../../services/HistoriaClinica.service';
-import { HistoriaClinicaInterface } from '../../historias-clinicas/historiaClinica';
 
 @Component({
   selector: 'app-editar-detalle-historia',
@@ -16,6 +15,7 @@ export class EditarDetalleHistoriaComponent implements OnInit {
   colaboradores: any[];
   idColaborador: number;
   colaboradorSeleccionado: any = {};
+
   detalleHistoriaClinica: any = {
     temperatura: 0,
     peso: 0,
@@ -47,7 +47,6 @@ export class EditarDetalleHistoriaComponent implements OnInit {
   constructor(
     private detalleHistoriaClinicaService: DetalleHistoriaClinicaService,
     private colaboradorService: ColaboradorSerivce,
-    private historiaClinicaService: HistoriaClinicaService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
@@ -72,10 +71,21 @@ export class EditarDetalleHistoriaComponent implements OnInit {
   }
 
   actualizarColaboradorSeleccionado() {
-    const colaboradorIdSeleccionado = this.detalleHistoriaClinica.colaborador.id;
+    console.log('Colaboradores:', this.colaboradores);
+  
+    const colaboradorIdSeleccionado = Number(this.idColaborador);
+  
     this.colaboradorService.getColaboradorById(colaboradorIdSeleccionado).subscribe(
       colaborador => {
         this.colaboradorSeleccionado = colaborador;
+  
+        if (this.colaboradorSeleccionado) {
+          console.log('Colaborador seleccionado:', this.colaboradorSeleccionado);
+
+          this.detalleHistoriaClinica.colaborador = this.colaboradorSeleccionado;
+        } else {
+          console.log('Colaborador no encontrado');
+        }
       },
       error => {
         console.error('Error al obtener el colaborador', error);
@@ -122,6 +132,8 @@ export class EditarDetalleHistoriaComponent implements OnInit {
       },
       error => {
         console.error('Error al editar detalle de historia clínica', error);
+
+        window.alert('Por favor revise la información cambiada');
       }
     );
 

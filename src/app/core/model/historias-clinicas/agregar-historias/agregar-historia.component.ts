@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HistoriaClinicaService } from 'src/app/core/services/HistoriaClinica.service';
 import { MascotaService } from 'src/app/core/services/Mascota.service';
 import { HistoriaClinicaInterface } from '../historiaClinica';
@@ -31,7 +32,9 @@ export class AgregarHistoriaComponent implements OnInit {
 
   };
 
-  constructor(private mascotaService: MascotaService, private historiaClinicaService: HistoriaClinicaService) {
+  constructor(private mascotaService: MascotaService, 
+    private historiaClinicaService: HistoriaClinicaService,
+    private router: Router) {
     this.mascotaSeleccionada = {
       id: 0,
       nombre: '',
@@ -94,9 +97,13 @@ export class AgregarHistoriaComponent implements OnInit {
     this.historiaClinicaService.agregarHistoriaClinica(nuevaHistoriaClinica).subscribe(
       (response) => {
         console.log('Historia clínica agregada exitosamente:', response);
+        window.alert('Se agregó la nueva historia clínica correctamente.');
+
+        this.router.navigate(['/historias-clinicas']);
       },
       (error) => {
         console.error('Error al agregar historia clínica:', error);
+        window.alert('Por favor revise la información a guardar');
       }
     );
   }

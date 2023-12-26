@@ -172,6 +172,7 @@ export class AgregarDetalleHistoriaComponent implements OnInit {
       },
       (error) => {
         console.error('Error al agregar el detalle de historia clínica:', error);
+        window.alert('Por favor verifique los datos a agregar.');
       }
     );
   }
